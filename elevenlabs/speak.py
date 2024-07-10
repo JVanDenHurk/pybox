@@ -45,7 +45,7 @@ def convert_text_to_audio(text):
         raise ValueError(f"Failed to generate audio for text: {text}")
 
 # Ensure 'output' directory exists
-output_dir = 'output'
+output_dir = r'C:\Users\justi\Desktop\ess\assets\audio'
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
@@ -65,7 +65,7 @@ for index in range(2, 1232):  # Index 2 corresponds to the third row in DataFram
         print(f"Skipping script{script_number}.")
         continue
 
-    script_name = f'{output_dir}/script{script_number}.mp3'
+    script_name = os.path.join(output_dir, f'script{script_number}.mp3')
 
     # Check if file already exists
     if os.path.exists(script_name):
